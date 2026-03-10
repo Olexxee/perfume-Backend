@@ -2,12 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Perfume garden hotel",
-  "main": "main.ts",
+  "main": "main.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec ts-node main.ts",
-    "create:admin": "ts-node scripts/createAdmin.ts",
-    "start": "node main.ts"
+    "dev": "nodemon main.js",
+    "create:admin": "node scripts/createAdmin.js",
+    "start": "node main.js"
   },
   "keywords": [],
   "author": "",
