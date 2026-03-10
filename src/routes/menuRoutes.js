@@ -1,4 +1,5 @@
 import express from "express";
+import { verifyAdmin } from "../middlewares/auth.js";
 import {
   getMenu,
   createMenuItem,
@@ -10,10 +11,10 @@ const menuRouter = express.Router();
 
 menuRouter.get("/", getMenu);
 
-menuRouter.post("/", createMenuItem);
+menuRouter.post("/", verifyAdmin, createMenuItem);
 
-menuRouter.patch("/:id", updateMenuItem);
+menuRouter.patch("/:id", verifyAdmin, updateMenuItem);
 
-menuRouter.delete("/:id", deleteMenuItem);
+menuRouter.delete("/:id", verifyAdmin, deleteMenuItem);
 
 export default menuRouter;
